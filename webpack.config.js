@@ -6,17 +6,17 @@ module.exports = (env, argv) => {
     const ENTRY_FILE = 'index.tsx'
     const BUNDLE_FILE = 'index.js'
 
-    const SOURCE = 'src'
-    const OUTPUT = 'dist'
+    const SOURCE = path.resolve(__dirname, 'src')
+    const OUTPUT = path.resolve(__dirname, 'dist')
 
     const IS_DEVELOPMENT = argv.mode === 'development';
 
     return {
         entry: {
-            index: path.resolve(__dirname, SOURCE, ENTRY_FILE),
+            index: path.resolve(SOURCE, ENTRY_FILE),
         },
         output: {
-            path: path.resolve(__dirname, OUTPUT),
+            path: path.resolve(OUTPUT),
             filename: BUNDLE_FILE,
         },
         devtool: IS_DEVELOPMENT ? 'inline-source-map' : IS_DEVELOPMENT,
@@ -31,8 +31,10 @@ module.exports = (env, argv) => {
         },
         devServer: {
             open: true,
-            contentBase: path.resolve(__dirname, 'dist'),
-            watchContentBase: true,
+            static: {
+                directory: OUTPUT,
+                watch: true
+            },
             historyApiFallback: true,
         },
         module: {

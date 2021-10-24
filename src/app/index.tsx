@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// molecules
-import Form from '@src/app/components/molecules/form'
+// organisms
+import DetailForm from '@src/app/components/organisms/detailForm'
 // templates
 import Header from '@src/app/components/templates/header'
 import Footer from '@src/app/components/templates/footer'
@@ -14,7 +14,7 @@ export default () => {
 
             <Switch>
                 <Route exact path={'/'}>
-                    <Form></Form>
+                    <DetailForm></DetailForm>
                 </Route>
             </Switch>
 
