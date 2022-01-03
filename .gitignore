@@ -7,7 +7,7 @@ logs/
 #
 # builded files
 #
-/dist/
+dist/
 
 #
 # dotenv files
@@ -17,22 +17,10 @@ logs/
 #
 # Node.js files
 #
-/node_modules/
-/package-lock.json
-
-#
-# PHP files
-#
-#/vendor/
-#/composer.lock
+node_modules/
 
 #
 # OS generated files
 #
 .DS_Store
 Thumbs.db
-
-#
-# clasp File
-#
-/.clasp.json
